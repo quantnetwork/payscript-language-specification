@@ -5,153 +5,156 @@ This document specifies PayScript, a Groovy-based Domain-Specific Language (DSL)
  
 Table of Contents
 
-    1. Introduction 
+1. Introduction 
 
-1.1. What is PayScript? 
+    1.1. What is PayScript? 
 
-1.2. Problem Solved 
+    1.2. Problem Solved 
 
-1.3. Audience 
+    1.3. Audience 
 
-1.4. Guiding Principles
+    1.4. Guiding Principles
 
-    2. Conventions and Terminology
+2. Conventions and Terminology
 
-2.1. Keywords 
+    2.1. Keywords 
 
-2.2. Data Type Notations 
+    2.2. Data Type Notations 
 
-2.3. PayScript-Specific Terms
+    2.3. PayScript-Specific Terms
 
-    3. PayScript Core Concepts 
+3. PayScript Core Concepts 
 
-3.1. Groovy Foundation 
+    3.1. Groovy Foundation 
 
-3.2. Script Execution Model 
+    3.2. Script Execution Model 
 
-3.3. Triggers and Parameters
+    3.3. Triggers and Parameters
 
-    4. PayScript Language Specification 
+4. PayScript Language Specification 
 
-4.1. Basic Syntax and Structure 
+    4.1. Basic Syntax and Structure
 
-4.1.1. Comments 
+        4.1.1. Comments  
 
-4.1.2. Case Sensitivity 
+        4.1.2. Case Sensitivity 
 
-4.1.3. "Hello, World!" Equivalent 
+        4.1.3. "Hello, World!" Equivalent 
 
-4.2. Data Types 
+    4.2. Data Types 
 
-4.2.1. Groovy Primitive and Standard Types 
+        4.2.1. Groovy Primitive and Standard Types 
 
-4.2.2. PayScript-Specific Data Types 
+        4.2.2. PayScript-Specific Data Types 
 
-4.2.2.1. BalanceInfo 
+            4.2.2.1. BalanceInfo 
 
-4.2.2.2. PaymentInfo 
+            4.2.2.2. PaymentInfo 
 
-4.2.2.3. LockInfo 
+            4.2.2.3. LockInfo 
 
-4.2.2.4. AccountIdentifier and Related Types 
+            4.2.2.4. AccountIdentifier and Related Types 
 
-4.2.2.5. AmountInfo 
+            4.2.2.5. AmountInfo 
 
-4.2.2.6. Enums (AccountIdentifierType, ConsentStatus, LockStatus, CurrencyEnum) 4.2.2.7. Other Domain-Specific Types (e.g., Reserve, ReserveInfo, UpdateReserveInfo, ReserveTransactionsFilter, ReserveTransaction) 
+            4.2.2.6. Enums
+            
+            4.2.2.7. Other Domain-Specific Types
 
-4.3. Variables and Constants 
+    4.3. Variables and Constants 
 
-4.4. Operators 
+    4.4. Operators 
 
-4.5. Control Flow 
+    4.5. Control Flow 
 
-4.6. Functions and Procedures 
+    4.6. Functions and Procedures 
 
-4.7. Error Handling
+    4.7. Error Handling
 
-    5. PayScript Standard Library (Built-in Functions) 
+5. PayScript Standard Library (Built-in Functions) 
 
-5.1. Account Information Functions 
+    5.1. Account Information Functions 
 
-5.1.1. accountExists 
+        5.1.1. accountExists 
 
-5.1.2. checkAccountFunds 
+        5.1.2. checkAccountFunds 
 
-5.1.3. getBalance 
+        5.1.3. getBalance 
 
-5.1.4. getRelatedAccountIds 
+        5.1.4. getRelatedAccountIds 
 
-5.1.5. getConsent 
+        5.1.5. getConsent 
 
-5.2. Payment Functions 
+    5.2. Payment Functions 
 
-5.2.1. createPayment 
+        5.2.1. createPayment 
 
-5.2.2. requestPayment 
+        5.2.2. requestPayment 
 
-5.2.3. getPaymentInfo 
+        5.2.3. getPaymentInfo 
 
-5.3. Hard Lock Functions 
+    5.3. Hard Lock Functions 
 
-5.3.1. getLockStatus 
+        5.3.1. getLockStatus 
 
-5.3.2. getLockInfo 
+        5.3.2. getLockInfo 
 
-5.3.3. createLock 
+        5.3.3. createLock 
 
-5.3.4. getAccountLocks 
+        5.3.4. getAccountLocks 
 
-5.3.5. releaseLock 
+        5.3.5. releaseLock 
 
-5.4. Reserve Functions 
+    5.4. Reserve Functions
 
-5.4.1. createReserve 
+        5.4.1. createReserve 
 
-5.4.2. editReserve 
+        5.4.2. editReserve 
 
-5.4.3. getAccountReserves 
+        5.4.3. getAccountReserves 
 
-5.4.4. getReserveInfo 
+        5.4.4. getReserveInfo 
 
-5.4.5. addFundsToReserve 
+        5.4.5. addFundsToReserve 
 
-5.4.6. moveFundsBetweenReserves 
+        5.4.6. moveFundsBetweenReserves 
 
-5.4.7. withdrawFundsFromReserve 
+        5.4.7. withdrawFundsFromReserve 
 
-5.4.8. getReserveTransactions 
+        5.4.8. getReserveTransactions 
 
-5.4.9. getReserveTransactionsCount 
+        5.4.9. getReserveTransactionsCount 
 
-5.4.10. deleteReserve 
+        5.4.10. deleteReserve 
 
-5.5. Utility Functions 
+    5.5. Utility Functions 
 
-5.5.1. callScript
+        5.5.1. callScript
 
-5.5.2 logMessage
+        5.5.2 logMessage
 
-    6. Security and Compliance 
+6. Security and Compliance 
 
-6.1. Data Handling 
+    6.1. Data Handling 
 
-6.2. Transactional Integrity 
+    6.2. Transactional Integrity 
 
-6.3. Auditing Considerations
+    6.3. Auditing Considerations
 
-    7. Deployment and Execution Environment 
+7. Deployment and Execution Environment 
 
-7.1. PayScript Interpreter 
+    7.1. PayScript Interpreter 
 
-7.2. Quant Flow Sandbox 
+    7.2. Quant Flow Sandbox 
 
-7.3. Quant Flow Product Integration
+    7.3. Quant Flow Product Integration
 
-    Examples (as provided) 
 
-8.1. Basic Payment Transfer
+8. Examples
 
-    8. Conformance
+    8.1. Basic Payment Transfer
+
+9. Conformance
 
  
 # 1. Introduction
@@ -1289,7 +1292,7 @@ For production deployment and execution, banks integrate with the Quant Flow Pro
 
 This example demonstrates a fundamental payment transfer using PayScript, triggered on demand and taking account and amount details as parameters.
 
- 
+ ```groovy
 // Define the trigger for this script, indicating it runs when explicitly invoked
 trigger = "on_demand";
 
@@ -1300,7 +1303,6 @@ def payee = ${payee:scan};   // Expected format: sortCode:accountNumber or a ful
 def amount = ${amount:decimal}; // Expected format: a decimal number, e.g., 100.50
 
 // Construct the AccountInfo objects for the payer and payee.
-// We assume an AccountInfo builder is available which can take an AccountIdentifier directly.
 def payerAccountInfo = AccountInfo.builder()
         .type(AccountIdentifierType.SCAN)
         .identifier(payer) // The 'payer' parameter (String or Map) will be parsed into the appropriate AccountIdentifier structure
@@ -1330,14 +1332,7 @@ def payment = PaymentInfo.builder()
 // Call the built-in 'createPayment' function to execute the transaction.
 // This function interacts with the core banking system.
 def newPaymentId = createPayment(payment);
-
-// Optionally, you might retrieve the status of the created payment for logging or further logic.
-// However, direct logging/output mechanisms from within the script might be limited and
-// often rely on the surrounding Quant Flow platform to capture results or exceptions.
-// In a real scenario, you might return this ID or a PaymentInfo object for the platform to process.
-// def finalPaymentInfo = getPaymentInfo(newPaymentId);
-// println "Payment ${newPaymentId} status: ${finalPaymentInfo.status}";
-
+```
  
 # 9. Conformance
 
