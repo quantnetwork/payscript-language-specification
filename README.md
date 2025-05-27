@@ -34,32 +34,20 @@ Table of Contents
 4. PayScript Language Specification 
 
     4.1. Basic Syntax and Structure
-
-        4.1.1. Comments  
-
-        4.1.2. Case Sensitivity 
-
-        4.1.3. "Hello, World!" Equivalent 
-
+    - 4.1.1. Comments  
+    - 4.1.2. Case Sensitivity 
+    - 4.1.3. "Hello, World!" Equivalent 
+    
     4.2. Data Types 
-
-        4.2.1. Groovy Primitive and Standard Types 
-
-        4.2.2. PayScript-Specific Data Types 
-
-            4.2.2.1. BalanceInfo 
-
-            4.2.2.2. PaymentInfo 
-
-            4.2.2.3. LockInfo 
-
-            4.2.2.4. AccountIdentifier and Related Types 
-
-            4.2.2.5. AmountInfo 
-
-            4.2.2.6. Enums
-            
-            4.2.2.7. Other Domain-Specific Types
+    - 4.2.1. Groovy Primitive and Standard Types 
+    - 4.2.2. PayScript-Specific Data Types 
+        - 4.2.2.1. BalanceInfo 
+        - 4.2.2.2. PaymentInfo 
+        - 4.2.2.3. LockInfo 
+        - 4.2.2.4. AccountIdentifier and Related Types 
+        - 4.2.2.5. AmountInfo 
+        - 4.2.2.6. Enums
+        - 4.2.2.7. Other Domain-Specific Types
 
     4.3. Variables and Constants 
 
@@ -75,63 +63,46 @@ Table of Contents
 
     5.1. Account Information Functions 
 
-        5.1.1. accountExists 
+    - 5.1.1. accountExists 
 
-        5.1.2. checkAccountFunds 
+    - 5.1.2. checkAccountFunds 
 
-        5.1.3. getBalance 
+    - 5.1.3. getBalance 
 
-        5.1.4. getRelatedAccountIds 
+    - 5.1.4. getRelatedAccountIds 
 
-        5.1.5. getConsent 
+    - 5.1.5. getConsent 
 
     5.2. Payment Functions 
 
-        5.2.1. createPayment 
+    - 5.2.1. createPayment 
 
-        5.2.2. requestPayment 
+    - 5.2.2. requestPayment 
 
-        5.2.3. getPaymentInfo 
+    - 5.2.3. getPaymentInfo 
 
     5.3. Hard Lock Functions 
-
-        5.3.1. getLockStatus 
-
-        5.3.2. getLockInfo 
-
-        5.3.3. createLock 
-
-        5.3.4. getAccountLocks 
-
-        5.3.5. releaseLock 
-
+    - 5.3.1. getLockStatus 
+    - 5.3.2. getLockInfo 
+    - 5.3.3. createLock 
+    - 5.3.4. getAccountLocks 
+    - 5.3.5. releaseLock 
+    
     5.4. Reserve Functions
-
-        5.4.1. createReserve 
-
-        5.4.2. editReserve 
-
-        5.4.3. getAccountReserves 
-
-        5.4.4. getReserveInfo 
-
-        5.4.5. addFundsToReserve 
-
-        5.4.6. moveFundsBetweenReserves 
-
-        5.4.7. withdrawFundsFromReserve 
-
-        5.4.8. getReserveTransactions 
-
-        5.4.9. getReserveTransactionsCount 
-
-        5.4.10. deleteReserve 
+    - 5.4.1. createReserve 
+    - 5.4.2. editReserve 
+    - 5.4.3. getAccountReserves 
+    - 5.4.4. getReserveInfo 
+    - 5.4.5. addFundsToReserve 
+    - 5.4.6. moveFundsBetweenReserves 
+    - 5.4.7. withdrawFundsFromReserve 
+    - 5.4.8. getReserveTransactions 
+    - 5.4.9. getReserveTransactionsCount 
+    - 5.4.10. deleteReserve 
 
     5.5. Utility Functions 
-
-        5.5.1. callScript
-
-        5.5.2 logMessage
+    - 5.5.1. callScript
+    - 5.5.2 logMessage
 
 6. Security and Compliance 
 
@@ -148,7 +119,6 @@ Table of Contents
     7.2. Quant Flow Sandbox 
 
     7.3. Quant Flow Product Integration
-
 
 8. Examples
 
