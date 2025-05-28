@@ -27,9 +27,14 @@ Table of Contents
 
     3.1. Groovy Foundation 
 
-    3.2. Script Execution Model 
+    3.2. Script Execution Model
 
-    3.3. Triggers and Parameters
+    3.3. Automation 
+
+    3.4. Triggers
+
+    3.5. Script Parameters
+
 
 4. PayScript Language Specification 
 
@@ -59,26 +64,18 @@ Table of Contents
 
     4.7. Error Handling
 
-5. PayScript Standard Library (Built-in Functions) 
+5. PayScript Standard Library
 
     5.1. Account Information Functions 
-
     - 5.1.1. accountExists 
-
     - 5.1.2. checkAccountFunds 
-
     - 5.1.3. getBalance 
-
     - 5.1.4. getRelatedAccountIds 
-
     - 5.1.5. getConsent 
 
     5.2. Payment Functions 
-
     - 5.2.1. createPayment 
-
     - 5.2.2. requestPayment 
-
     - 5.2.3. getPaymentInfo 
 
     5.3. Hard Lock Functions 
@@ -102,7 +99,7 @@ Table of Contents
 
     5.5. Utility Functions 
     - 5.5.1. callScript
-    - 5.5.2 logMessage
+    - 5.5.2. logMessage
 
 6. Security and Compliance 
 
@@ -145,9 +142,9 @@ The primary audience for PayScript is developers employed by financial instituti
 
 PayScript's design is guided by the following core principles:
 
-    Simplicity: Providing an intuitive and readable syntax that leverages the familiarity of Groovy, allowing for rapid development and easier maintenance of financial logic.
+- Simplicity: Providing an intuitive and readable syntax that leverages the familiarity of Groovy, allowing for rapid development and easier maintenance of financial logic.
 
-    Interoperability: Designed to seamlessly integrate with existing core banking systems and adhere to industry-standard open-banking specifications, ensuring broad applicability and connectivity.
+- Interoperability: Designed to seamlessly integrate with existing core banking systems and adhere to industry-standard open-banking specifications, ensuring broad applicability and connectivity.
 
 # 2. Conventions and Terminology
 
@@ -173,17 +170,33 @@ PayScript is a DSL built on Apache Groovy. This means that all valid Groovy synt
 
 ## 3.2. Script Execution Model
 
-PayScript scripts are interpreted. They are executed within a dedicated PayScript interpreter environment. This interpreter handles the parsing of the script, execution of its logic, and interaction with underlying banking systems via the built-in financial functions.
+PayScripts are interpreted. They are executed within a dedicated PayScript interpreter environment. This interpreter handles the parsing of the script, execution of its logic, and interaction with underlying banking systems via the built-in financial functions. It also manages the automations and their triggers.
 
-## 3.3. Triggers and Parameters
+## 3.3 Automation
 
-PayScript scripts are designed to be executed as part of an "Automation" within the Quant Flow ecosystem. When an automation is created, a trigger mechanism is defined, specifying when the script should run.
+Automations are jobs which run a PayScript, specifying the trigger conditions and the script parameters used in its execution. They are the main way in which PayScripts are run.
+
+
+## 3.4 Triggers
+
+A trigger defines the conditions that will cause an Automation to run.When an automation is created, it must specify the trigger of the type defined in the PayScript. 
+
+Triggers are defined at the first line of a script, specifying a type of event. The 
+
+```groovy
+trigger = "time"; // The time trigger will run the script on a schedule
+
+// Other script logic
+```
+
+
+## 3.5. Script Parameters
 
 Scripts can also be configured to accept parameters upon execution. These parameters are defined within the script using a specific placeholder syntax and are provided when the automation is created or triggered.
 
 Available Parameter Types:
 
-PayScript supports the following parameter types for triggers:
+PayScript supports the following parameter types:
 
 `BOOL`
 
